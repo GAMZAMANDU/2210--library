@@ -12,8 +12,6 @@ def add_book(title, author):
     """
     return data.add_books(title,author)
 
-
-
 def get_books():
     return data.get_books()
 
@@ -23,3 +21,12 @@ def delete_book(book_id):
 
 def borrow(borrower, title):
     return data.borrow(borrower, title)
+
+def get_borrows_by_month(month):
+    return data.get_borrows_by_month(month)
+
+def return_book(title):
+    return data.return_book(title)
+
+def save_books(borrower):
+    return cache.save_books(borrower)
