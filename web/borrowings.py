@@ -1,3 +1,5 @@
+from encodings.rot_13 import rot13
+
 from fastapi import APIRouter
 from pydantic import BaseModel
 
@@ -66,6 +68,10 @@ def save_book(borrower):
     """대출자의 대출한 도서 제목을 저장한다.	"""
     return service.save_books(borrower)
 
-@router.get("/get_books")
+@router.get("/borrowers/{borrower}/books")
 def get_books():
     return service.get_books(borrower)
+
+@rotuer.delete("/return")
+def delete_books(borrower):
+    return service.return_book(borrower)

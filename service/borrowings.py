@@ -33,3 +33,6 @@ def save_books(borrower):
 
 def get_books(borrwer):
     return cache.get_books(borrwer)
+
+def return_book(boorwer):
+    return cache.return_book(boorwer)
