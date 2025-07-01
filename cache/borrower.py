@@ -15,4 +15,4 @@ def get_books(borrower):
     return redis_client.LRANGE("borrower:{borrower}:books", 0, -1)
 
 def return_book(borrower):
-    return redis_client.del("borrower:{borrower}:books")
+    return redis_client.UNLINK("borrower:{borrower}:books")
