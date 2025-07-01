@@ -30,3 +30,6 @@ def return_book(title):
 
 def save_books(borrower):
     return cache.save_books(borrower)
+
+def get_books(borrwer):
+    return cache.get_books(borrwer)

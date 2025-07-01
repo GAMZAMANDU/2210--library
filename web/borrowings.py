@@ -1,6 +1,7 @@
 from fastapi import APIRouter
 from pydantic import BaseModel
 
+from cache import borrower
 from data import get_db
 from service import borrowings as service
 
@@ -64,3 +65,7 @@ def return_book(body : BookReturnReq):
 def save_book(borrower):
     """대출자의 대출한 도서 제목을 저장한다.	"""
     return service.save_books(borrower)
+
+@router.get("/get_books")
+def get_books():
+    return service.get_books(borrower)

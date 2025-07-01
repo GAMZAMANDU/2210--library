@@ -64,4 +64,5 @@ def return_book(title):
         return False
 
 def get_books_by_borrower(borrower):
-    return cur.execute("select i.borrower,b.title FROM borrowings i JOIN books b ON i.book_id = b.book_id WHERE i.borrower = ?", (borrower,))
+    cur.execute("select b.title FROM borrowings i JOIN books b ON i.book_id = b.book_id WHERE i.borrower = ?", (borrower,))
+    return cur.fetchall()
